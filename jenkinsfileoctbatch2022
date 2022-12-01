@@ -10,6 +10,7 @@ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKe
 
 //checkout code state
 stage('checkoutcode'){
+sendSlackNotifications("STARTED")
 git branch: 'development', credentialsId: '18861fbd-c5a7-45d7-804d-5fa30be32c5f', url: 'https://github.com/citibank-pp/maven-web-application.git'
 }
 
